@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Product</title>
+</head>
+<body>
+
+<h2>Create Product</h2>
+
+<form id="productForm" enctype="multipart/form-data">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+
+  <label for="description">Description:</label><br>
+  <textarea id="description" name="description" required></textarea><br>
+
+  <label for="price">Price:</label><br>
+  <input type="number" id="price" name="price" min="0" step="0.01" required><br>
+
+  <label for="category">Category:</label><br>
+  <input type="text" id="category" name="category" required><br>
+
+  <label for="sizes">Sizes (comma-separated):</label><br>
+  <input type="text" id="sizes" name="sizes"><br>
+
+  <label for="colors">Colors (comma-separated):</label><br>
+  <input type="text" id="colors" name="colors"><br>
+
+  <label for="mainImage">Main Image:</label><br>
+  <input type="file" id="mainImage" name="mainImage" accept="image/*" required><br>
+
+  <label for="images">Images:</label><br>
+  <input type="file" id="images" name="images" multiple accept="image/*"><br>
+  <div id="selectedImagesContainer"></div> <!-- Container for selected images -->
+
+ 
+
+  <label for="dimensions">Dimensions (comma-separated):</label><br>
+  <input type="text" id="dimensions" name="dimensions"><br>
+
+  <button type="submit">Create Product</button>
+</form>
+
+<script>
+    document.getElementById('images').addEventListener('change', function(event) {
+      const selectedImagesContainer = document.getElementById('selectedImagesContainer');
+      const files = event.target.files;
+    
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          console.log('Selected file:', file);
+          const reader = new FileReader();
+          reader.onload = function() {
+            const imageElement = document.createElement('img');
+            imageElement.src = reader.result;
+            imageElement.alt = 'Selected Image';
+            imageElement.style.maxWidth = '100px'; // Set maximum width for better display
+            selectedImagesContainer.appendChild(imageElement);
+          };
+          reader.readAsDataURL(file);
+        }
+      } else {
+        selectedImagesContainer.innerHTML = 'No images selected';
+      }
+    });
+    
+    document.getElementById('productForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+    
+      const formData = new FormData(this);
+      console.log('Form data:', formData); 
+    
+      try {
+        const response = await fetch('http://localhost:3008/product', {
+          method: 'POST',
+          body: formData
+        });
+    
+        if (!response.ok) {
+          throw new Error('Failed to create product');
+        }
+    
+        alert('Product created successfully!');
+        this.reset();
+      } catch (error) {
+        console.error('Error creating product:', error.message);
+        alert('Failed to create product');
+      }
+    });
+    </script>
+    
+    
+
+</body>
+</html>

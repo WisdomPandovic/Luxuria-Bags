@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "acumin-pro", "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.background-section {
+    background-image: url('./images/pix.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0; 
+    height: 500px;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .image-container {
+    text-align: center;
+    background: linear-gradient(to bottom, #E9E9E9, white);
+    padding: 20px;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+  }
+
+  .image-container h3 {
+    margin-top: 10px; 
+  }
+
+  .btn-duff{
+    background-color: #DDC2AB;
+    font-size: 13px;
+  }
+
+  .collections{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .btn-duffs{
+    background-color: #DDC2AB;
+    font-size: 20px;
+  }
+
+  .text-container {
+    background-color: #F1E6DD; 
+    color: white; 
+    padding: 80px; 
+    height: 300px;
+    color: #C8B4A3;
+    width: 100%;
+  }
+
+  .text-content h2 {
+    color: #C8B4A3; 
+  }
+
+  .brand-container img{
+    height: 300px !important; 
+    width: 100%;
+  }
+
+.product-details{
+    background-color: #C8B4A3;
+}
+
+.background-section-color {
+    background-color: #F1E6DD; 
+    padding: 50px 0;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px; 
+  }
+
+  .blog-background{
+    background-color: #F8F2EE;
+  }
+
+  .equal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .equal-height-h5 {
+    height: 50px;
+    overflow: hidden;
+  }
+
+  .equal-height-h3 {
+    height: 100px; 
+    overflow: hidden; 
+  }
+
+  .equal-height-p {
+    height: 100px; 
+    overflow: hidden; 
+  }
+
+  footer{
+    background-color: #DDC2AB;
+    color: black;
+  }
+
+  footer a {
+    color: #000;
+}
+
+footer h2{
+    font-family: cursive;
+}
+
+.fa-user, .fa-shopping-cart{
+  color: #6c757d ;
+}
+
+.sub-nav a, .sub-nav span{
+color: #000 ;
+}
+
+.copyright{
+  padding: 10px 0px;
+}
+
+.copyright h2{
+  font-size: 1em;
+}
+
+  @media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem !important; 
+    }
+
+    .text-container {
+        padding: 20px !important;
+    }
+
+ 
+}
+
+@media (max-width: 328px) {
+    .subscribe h2 {
+        font-size: 1.3rem !important; 
+    } 
+
+    .navbar-brand h1 {
+      font-size: 1.5rem;
+  }
+
+  .image-section h2{
+    font-size: 1.4rem;
+  }
+
+  .buy{
+    font-size: 1.5rem;
+  }
+  }
+
+  @media (max-width: 375px) {
+  
+    .navbar-brand h1 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width:425px) {
+  
+  .products-details h2 {
+    font-size: 1.2rem;
+}
+
+footer h2, .social-icons {
+  text-align: center;
+}
+}
